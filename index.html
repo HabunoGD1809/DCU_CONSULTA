@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <h1>Registro de Datos</h1>
+  <form id="registration-form">
+    <div class="form-group">
+      <input type="file" id="photo" placeholder="Ingresa una imagen" accept="image/*">
+      <label for="photo"></label>
+      <br>
+    </div>
+    <div class="form-group">
+      <input type="number" id="id" placeholder="Ingresa tu ID">
+    </div>
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Ingresa tu nombre">
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Ingresa tu correo electrónico">
+    </div>
+    <div class="form-group">
+      <input type="tel" id="phone" placeholder="Ingresa tu número de teléfono">
+    </div>
+    <button type="submit">Registrar</button>
+  </form>
+  <br><br><br><br><br>
+  <h2>Consulta de Datos</h2>
+  <form id="query-form">
+    <div class="form-group">
+      <input type="number" id="query-id" placeholder="Ingresa el ID a consultar">
+    </div>
+    <button type="submit">Consultar</button>
+  </form>
+  <div id="result-container"></div>
+  <script src="/script.js"></script>
+  <script src="/database.js"></script>
+</body>
+</html>
+
+
