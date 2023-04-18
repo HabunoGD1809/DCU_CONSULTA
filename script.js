@@ -94,3 +94,23 @@ queryForm.addEventListener("submit", (event) => {
     resultContainer.innerHTML = "No se encontraron resultados";
   }
 });
+
+// Obtener el input de tipo "file", el span para mostrar el nombre del archivo y el formulario
+const input = document.getElementById('photo');
+const selectedFileName = document.getElementById('selected-file-name');
+const form = document.getElementById('registration-form');
+
+// Escuchar el evento change del input de tipo "file"
+input.addEventListener('change', (event) => {
+  // Obtener el nombre del archivo seleccionado
+  const fileName = event.target.files[0]?.name || '';
+  // Mostrar el nombre del archivo en el span
+  selectedFileName.textContent = fileName;
+});
+
+// Escuchar el evento submit del formulario
+form.addEventListener('submit', (event) => {
+  // Limpiar el valor del span del nombre del archivo
+  selectedFileName.textContent = '';
+  // Aquí puedes agregar tu lógica de envío de formulario
+});

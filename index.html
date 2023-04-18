@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  <div id="ancle"></div>
+    <a href="#form-anchor" class="form-ancle">⚓ Ir a la consulta de datos</a>
+
     <h1>Registro de Datos</h1>
     <form id="registration-form">
       <div class="form-group">
-        <input
-          type="file"
-          id="photo"
-          placeholder="Ingresa una imagen"
-          accept="image/*"
-        />
+        <input type="file" id="photo" accept="image/*" />
+        <label for="photo" class="file-input-label">
+          <span>Selecciona una imagen</span>
+          <span class="file-input-button">Buscar🔎</span>
+        </label>
+        <span id="selected-file-name" class="selected-file-name"></span>
+
         <label for="photo"></label>
         <br />
       </div>
@@ -40,7 +44,10 @@
           placeholder="Ingresa tu número de teléfono"
         />
       </div>
-      <button type="submit">Registrar</button>
+      <div class="button-container">
+        <button type="submit">Registrar</button>
+        <button type="reset">Limpiar</button>
+      </div>
     </form>
     <div>
       <br /><br /><br /><br /><br />
@@ -54,6 +61,8 @@
       <br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br />
     </div>
+    <div id="form-anchor"></div>
+
     <h2>Consulta de Datos</h2>
     <form id="query-form">
       <div class="form-group">
@@ -63,9 +72,26 @@
           placeholder="Ingresa el ID a consultar"
         />
       </div>
-      <button type="submit">Consultar</button>
+      <div class="button-container">
+        <button type="submit">Consultar</button>
+        <button type="reset">Reset</button>
+      </div>
     </form>
+    <a href="#ancle" class="form-ancle"
+      >🔱 Ir al Registro de Dato</a>
     <div id="result-container"></div>
+    <div>
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
+    </div>
     <script src="/script.js"></script>
     <script src="/database.js"></script>
   </body>

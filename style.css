@@ -1,3 +1,8 @@
+:root {
+  --font-family-primary: helvetica;
+  --font-family-secondary: verdana;
+}
+
 #consulta {
   text-align: center;
 }
@@ -51,7 +56,7 @@ button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family-primary);
 }
 
 /* Estilo del contenedor principal */
@@ -62,7 +67,7 @@ body {
   justify-content: center;
   background-image: linear-gradient(
     to bottom right,
-    rgb(187, 255, 229),
+    rgb(187, 255, 215),
     rgb(82, 200, 255)
   );
 }
@@ -73,13 +78,13 @@ h2 {
   -webkit-text-stroke: 0.5px #00aaff;
   text-stroke: 1px #f8f8f8;
   text-shadow: 2px 2px 4px rgba(0, 170, 255, 0.6);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
 }
 
 /* Estilo del formulario de registro de datos */
 #registration-form,
 #query-form {
-  background-color: rgba(40, 219, 159, 0.621);
+  background-color: rgba(7, 246, 166, 0.621);
   padding: 20px;
   border-radius: 5px;
   width: 100%;
@@ -98,18 +103,71 @@ input[type="number"] {
   width: 100%;
   padding: 10px;
   border: none;
-  border-bottom: 0.1px solid #969696;
-  background-color: #f8f8f8;
+  border-bottom: 0.1px solid #696767;
+  background-color: #f8f8f8c3;
   transition: background-color 0.3s ease-in-out;
   text-align: center;
 }
 
-input[type="text"]::placeholder,
-input[type="email"]::placeholder,
-input[type="number"],
-input[type="tel"]::placeholder {
+::placeholder {
+  opacity: 0.3;
+  font-family: var(--font-family-secondary);
+  animation: placeholderAnim 2s infinite;
   text-align: center;
 }
+
+@keyframes placeholderAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* seleccionar archivo */
+/* Estilos para el input de tipo "file" */
+input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Estilos para el contenedor del input de tipo "file" */
+.file-input-label {
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+}
+
+.file-input-label:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+/* Estilos para el botón del input de tipo "file" */
+.file-input-button {
+  color: #007bff;
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambiar el estilo del botón cuando se pasa el mouse encima */
+.file-input-label:hover .file-input-button {
+  background-color: #29c6ff;
+}
+/* acaba aqui */
 
 input[type="text"]:hover,
 input[type="email"]:hover,
@@ -120,41 +178,67 @@ input[type="number"]:hover {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Estilo del botón de registro y consulta */
-button[type="submit"] {
+/* Estilos CSS actualizados para los botones de submit y reset*/
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button[type="submit"],
+button[type="reset"] {
   background-color: #007bff;
   color: #ffffff;
   border: none;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  width: 100%;
+  flex: 1;
   transition: background-color 0.3s ease-in-out;
+  margin: 0 5px;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  background-color: #002d5d;
+}
+
+button[type="submit"]:active,
+button[type="reset"]:active {
+  transform: scale(0.95);
+  background-color: #00417a;
 }
 
 /* Estilo del resultado de la consulta */
 #result-container {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #000000;
-  background-color: #f8f8f800;
-  padding: 10px;
+  margin-top: 5px;
+  color: #333;
+  background-color: #f8f8f883;
+  padding: 8px;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
-  font-family: "Arial", sans-serif;
+  font-family: var(--font-family-primary);
+  border: 1px solid #cccccc2f;
+  display: flex;
+  flex-direction: column;
+}
+
+#result-container h3 {
+  margin-bottom: 5px;
+}
+
+#result-container p {
+  margin: 0;
 }
 
 /* Reducción del tamaño de la imagen */
 /* Estilo de la imagen */
 img {
+  margin-top: 15px;
   width: 200px;
   margin-left: auto;
   margin-right: auto;
-  border: 5px solid #008cff23;
+  border: 2px solid #008cff23;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
 }
@@ -175,12 +259,40 @@ img:hover {
 
 /* Nueva regla para el estilo de las etiquetas */
 label {
-  font-size: 18px;
-  color: #007bff;
+  font-size: 15px;
   font-weight: bold;
 }
 
 input {
   outline: 2px ridge rgba(0, 166, 255, 0.366);
-  border-radius: 0.7rem;
+  border-radius: 4.5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Estilo para el enlace de ancla */
+.form-ancle {
+  opacity: 1;
+  position: relative;
+  width: 10%;
+  top: 40%;
+  right: 30%;
+  transform: translateY(20%);
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, rgba(14, 203, 255, 0.846), rgba(0, 255, 119, 0.582)); 
+  padding: 5px 10px; 
+  font-size: 13px;
+}
+
+.form-ancle:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+
 }
