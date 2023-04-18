@@ -1,60 +1,58 @@
-
-#consulta{
+#consulta {
   text-align: center;
 }
 
-.boton{
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    z-index: 0;
-    background: #fff;
-    overflow: hidden;
-    border: 2px solid #4433ff;
-    color: #4433ff;
-    align-items: center;
-  }
+.boton {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #4433ff;
+  color: #4433ff;
+  align-items: center;
+}
 
+.boton:hover {
+  color: #000000;
+}
 
+.boton:after {
+  height: 100%;
+}
 
-  .boton:hover {
-    color: #000000;
-  }
-
-  .boton:after {
-    height: 100%;
-  }
-  
-  .boton:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s ease;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background: #4433ff;
-  }
-
-
+.boton:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #4433ff;
+}
 
 /* Reset de estilos por defecto del navegador */
-body, form, input, label, button {
+body,
+form,
+input,
+label,
+button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 
 /* Estilo del contenedor principal */
 body {
@@ -62,17 +60,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(48, 47, 47);
-
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(187, 255, 229),
+    rgb(82, 200, 255)
+  );
 }
 
-h1, h2 {
- color: #f8f8f8;
+h1,
+h2 {
+  color: #f8f8f8;
+  -webkit-text-stroke: 0.5px #00aaff;
+  text-stroke: 1px #f8f8f8;
+  text-shadow: 2px 2px 4px rgba(0, 170, 255, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Estilo del formulario de registro de datos */
-#registration-form, #query-form {
-  background-color: rgb(61, 53, 53);
+#registration-form,
+#query-form {
+  background-color: rgba(40, 219, 159, 0.621);
   padding: 20px;
   border-radius: 5px;
   width: 100%;
@@ -82,7 +89,10 @@ h1, h2 {
 }
 
 /* Estilo de los campos de entrada de texto y etiquetas */
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"]{
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
   display: block;
   margin-bottom: 10px;
   width: 100%;
@@ -94,7 +104,6 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
   text-align: center;
 }
 
-
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="number"],
@@ -102,13 +111,13 @@ input[type="tel"]::placeholder {
   text-align: center;
 }
 
-
-
-input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="number"]:hover {
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover {
   background-color: #f7f7f7;
   transform: scale(1.1);
-  transition: transform 0.2s ease-in-out; 
-
+  transition: transform 0.2s ease-in-out;
 }
 
 /* Estilo del botón de registro y consulta */
@@ -121,10 +130,7 @@ button[type="submit"] {
   cursor: pointer;
   width: 100%;
   transition: background-color 0.3s ease-in-out;
-
 }
-
-
 
 button[type="submit"]:hover {
   background-color: #0056b3;
@@ -139,9 +145,8 @@ button[type="submit"]:hover {
   padding: 10px;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
-
 
 /* Reducción del tamaño de la imagen */
 /* Estilo de la imagen */
@@ -175,8 +180,7 @@ label {
   font-weight: bold;
 }
 
-
 input {
-  outline: 2px ridge rgba(220, 50, 50, 0.366);border-radius: 0.5rem;
+  outline: 2px ridge rgba(0, 166, 255, 0.366);
+  border-radius: 0.7rem;
 }
-
