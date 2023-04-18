@@ -76,7 +76,6 @@ h1,
 h2 {
   color: #f8f8f8;
   -webkit-text-stroke: 0.5px #00aaff;
-  text-stroke: 1px #f8f8f8;
   text-shadow: 2px 2px 4px rgba(0, 170, 255, 0.6);
   font-family: var(--font-family-primary);
 }
@@ -211,10 +210,10 @@ button[type="reset"]:active {
 
 /* Estilo del resultado de la consulta */
 #result-container {
-  margin-top: 5px;
+  margin: 5px;
   color: #333;
   background-color: #f8f8f883;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
   font-family: var(--font-family-primary);
@@ -276,23 +275,25 @@ input {
 
 /* Estilo para el enlace de ancla */
 .form-ancle {
-  opacity: 1;
   position: relative;
-  width: 10%;
   top: 40%;
   right: 30%;
-  transform: translateY(20%);
+  transform: translateY(10%);
   margin-top: 20px;
-  color: rgb(255, 255, 255);
+  color: rgba(19, 200, 255, 0.633);
   text-decoration: none;
   border-radius: 5px;
-  background-image: linear-gradient(to top, rgba(14, 203, 255, 0.846), rgba(0, 255, 119, 0.582)); 
-  padding: 5px 10px; 
-  font-size: 13px;
+  padding: 5px; 
+  background-color: #ffffff55;
+  font-size: 15px;
 }
 
 .form-ancle:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
-
+  transform: scale(1.2);
+  transition: transform 0.2s ease-out;
 }
+
+.anchor-under {
+  transform: rotate(180deg);
+}
+

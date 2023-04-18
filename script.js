@@ -82,17 +82,19 @@ queryForm.addEventListener("submit", (event) => {
   const record = database.find((record) => record.id === queryId);
 
   // Mostrar los datos del registro en el contenedor de resultados
-  if (record) {
-    resultContainer.innerHTML = `
-      <h3>ID: ${record.id}</h3>
-      <p>Nombre: ${record.name}</p>
-      <p>Correo: ${record.email}</p>
-      <p>Teléfono: ${record.phone}</p>
+if (record) {
+  resultContainer.innerHTML = `
+    <div>
+      <h3 style="color: red;">ID: ${record.id}</h3>
+      <p style="font-size: 18px; font-weight: bold;">Nombre: ${record.name}</p>
+      <p style="font-size: 16px;">Correo: ${record.email}</p>
+      <p style="font-size: 16px;">Teléfono: ${record.phone}</p>
       <img src="${record.photo}" alt="Foto">
-    `;
-  } else {
-    resultContainer.innerHTML = "No se encontraron resultados";
-  }
+    </div>
+  `;
+} else {
+  resultContainer.innerHTML = `<p style="font-size: 18px; color: #777;">No se encontraron resultados</p>`;
+}
 });
 
 // Obtener el input de tipo "file", el span para mostrar el nombre del archivo y el formulario
